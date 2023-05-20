@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <title>BubbleNet</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+</head>
+
+<body>
+    <div style="height: 815px; width: 1440px;" id="bubbleNet">
+        <div style="display: flex; height: 120px; width: 1440px; padding-top: 15px; padding-bottom: 10px;"
+            id="bulletViz">
+            <div style="height: 120px; width: 288px; margin-right: 10px;" id="timeBullet">
+                <p style="font-size: 10px; margin: 0; padding-bottom: 5px; padding-left: 10px;">Time</p>
+                <svg class="taxis"></svg>
+            </div>
+            <div style="height: 110px;width: 278px;border: solid lightgray 1px;margin-right: 15px; margin-left: 7px; border-radius: 4px;"
+                id="selectionWindow">
+                <div style="height: 43px; width:278px; border-bottom: solid lightgray 1px;">
+                    <h5 id="selectionWindowDate" style="text-align: center; font-family: sans-serif;padding: 10px;">Tue
+                        Jun 14 2022</h5>
+                </div>
+                <div style="display:flex; height: 32px; width:278px; border-bottom: solid lightgray 1px;">
+                    <div id="selectionWindowName"
+                        style="text-align: center; height: 30px; width:278px; font-family: sans-serif; font-size: 14px; padding-top: 5px;">
+                        Whole World</div>
+                </div>
+                <div style="display:flex; height: 35px; width:278px; ">
+                    <div id="selectionWindowAttr"
+                        style="height: 30px; width:185px;  font-family: sans-serif; padding-left: 8px; padding-top: 5px; font-size: 14px;">
+                        447867 new_cases</div>
+                    <div style="height: 30px; width:93px; padding-top: 5px;"><span id="selectionWindowIncArrow"
+                            style="color: green; padding: 0px 5px; font-weight: bold;">↑</span><span
+                            id="selectionWindowIncData">73.41%</span></div>
+                </div>
+            </div>
+            <div style="height: 120px; width: 288px; margin-right: 25px;" id="alertsBullet">
+                <p style="font-size: 10px; margin: 0; padding-bottom: 10px;">Population</p>
+                <p style="font-size: 10px; margin: 0; padding: 0; text-align: end; padding-right: 10px;">Population</p>
+                <svg class="aaxis"></svg>
+                <div id="alertsBulletInner"></div>
+            </div>
+            <div style="height: 120px; width: 288px; " id="priorityBullet">
+                <p style="font-size: 10px; margin: 0; padding-bottom: 5px;">Tests and Vaccinations</p>
+                <svg class="paxis"></svg>
+            </div>
+            <div style="height: 120px; width: 288px; " id="categoryBullet">
+                <p style="font-size: 10px; margin: 0; padding-bottom: 5px;">Cases And Deaths</p>
+                <svg class="caxis"></svg>
+            </div>
+        </div>
+        <div style="display: flex; height: 575px; width: 1440px; margin-top: 10px;" id="heatAndMap">
+            <div style="height: 575px; width: 288px; " id="heatmap">
+                <!--- #### add here ### --->
+            </div>
+            <div id="dorling-map" style="padding-top: 10px;"><svg id="map_svg"></svg></div>
+        </div>
+        <br>
+        <div style="display: flex;height: 120px; width: 1440px; " id="summaryAndExtension">
+            <div id="covid-details" class="row col-md-10"
+                style="height: 120px; width: 900px; padding-left: 20px; padding-top: 5px;">
+                <div class="col-md-2">
+                    <input id="covidDetailsBtn"
+                        style="height: 36px; width: 100px; font-size: 14px; border: none; border-radius: 4px;"
+                        type="button" value="Show Details">
+                </div>
+                <div class="col-md-10"
+                    style="height: 120px; overflow-y:scroll; padding-left: 10px; padding-right: 10px;">
+                    <table id="covidDetailsTable" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Country</th>
+                                <th scope="col">New Cases</th>
+                                <th scope="col">New Deaths</th>
+                                <th scope="col">New Tests</th>
+                                <th scope="col">New Vaccinations</th>
+                            </tr>
+                        </thead>
+                        <tbody id="covidDetailTableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="extension" class="col-md-4" style="height: 120px; width: 660px;">
+                <svg class="col-md-12" id="extension-plan">
+                    <text x="210" y="12">Deviation from Average (%)</text>
+                    <rect height="60" width="60" x="180" y="24" rx="2"
+                        style="fill:rgb(125, 183, 215); stroke: black; stroke-width: 0.5px;" id="least"></rect>
+                    <rect height="60" width="60" x="244" y="24" rx="2"
+                        style="fill:rgb(217, 232, 241); stroke: black; stroke-width: 0.5px;" id="less"></rect>
+                    <rect height="60" width="60" x="308" y="24" rx="2"
+                        style="fill:rgb(250, 224, 209); stroke: black; stroke-width: 0.5px;" id="more"></rect>
+                    <rect height="60" width="60" x="372" y="24" rx="2"
+                        style="fill:rgb(235, 147, 118); stroke: black; stroke-width: 0.5px;" id="most"></rect>
+                    <text x="160" y="105">-100</text>
+                    <text x="227" y="105">-50</text>
+                    <text x="292" y="105">Avg.</text>
+                    <text x="360" y="105">50</text>
+                    <text x="420" y="105">100</text>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

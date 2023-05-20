@@ -1,0 +1,103 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.bullet {
+  font: 8px sans-serif;
+}
+
+.bullet .marker {
+  stroke: #BFBFBF;
+  stroke-width: 2px;
+}
+
+.bullet .tick line {
+  stroke: #666;
+  stroke-width: .5px;
+}
+
+.bullet .range {
+  fill: #E7E7E7;
+}
+
+.bullet .measure {
+  fill: #C3C3C3;
+}
+
+.bullet .title {
+  fill: #C3C3C3;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.bullet .subtitle {
+  fill: #999;
+}
+
+button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.myContainer {
+  margin: auto;
+  width: 1600px;
+  height: 800px
+}
+
+#map_svg {
+  width: 1152px;
+  height: 575px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.tooltip-bullet {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  padding: 2px;
+  font: 12px sans-serif;
+  font-weight: bold;
+  background: rgb(0, 0, 0);
+  border: 2px solid black;
+  border-radius: 10px;
+  pointer-events: none;
+  color: rgb(255, 0, 0);
+}
+
+.tooltipmain {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 75px;
+  padding: 2px;
+  font: 15px sans-serif;
+  background: rgb(0, 0, 0);
+  border: 2px solid black;
+  border-radius: 10px;
+  pointer-events: none;
+  color: white;
+  opacity: 0.5;
+}
+
+div.tooltip-heatmap {
+  background: black;
+  border-radius: 4px;
+  position: absolute;
+  width: 140px;
+  height: 80px;
+  padding: 5px;
+  padding-left: 10px;
+  font: 12px;
+  color: rgb(255, 0, 0);
+  pointer-events: none;
+  opacity: 0.7;
+}

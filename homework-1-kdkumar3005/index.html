@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<title>CSE 578 Homework #1: Dhiraj Kumar Karthikeyan</title>
+	</head>
+	<style>
+		.container {
+			maxwidth: 970px;
+		}
+		h2, h3, h4, span {
+			text-align: center;
+		}
+		img {
+			width:100%;
+			border: 1px solid gray;
+		}
+		p {
+			text-align: justify;
+			text-justify: inter-word;
+		}
+	</style>
+    <body>
+	    <div class="container">
+			<header>
+				<h2 style=>Homework #1 - Vis in the Wild</h2>
+				<h3>Dhiraj Kumar Karthikeyan&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;Email: dkarthik@asu.edu</h3>
+			</header>
+			<hr>
+			<img src="imgs/Movie network chart.png" alt="The cool visualization example that I found!">
+			<hr>
+			<h4>This is a visualization of the similarity between movies by means of a network graph</h4>
+			<div style="width:100%;text-align:center;">
+				<a href="http://bl.ocks.org/paulovn/9686202" target="_blank">Link to visualization</a></div>
+			<p>
+				<b>Summary:</b> <p>This visualization depicts the movies as nodes and a relationship between other movies as a path connecting them.
+					The similarity here is not based on genre or director but by the way users interact with them and how they are rated, this is something
+					similar to the "bought together" feature in amazon or other e-commerce websites. There are 25 most valued are highlighted in a red border
+					and the area of their circle is also larger.The width of the line between the two movies reflect how similar they are, which means that 
+					two very similar movies will be closer to each other.
+				</p>
+
+			</p>
+			<ul>
+				<li><b>Domain:</b> The target users of this visualization are casual viewers, critics and general population.</li>
+				<li><b>Data:</b> 
+					<ul>
+						<li><b>Domain description:</b> The list of movies produce from data in the mobile app "Popcha" and are related to eachother using the way Popcha users interact with them.</li> 
+						<li><b>Abstraction:</b> <ul><li>Dataset type: Tabular</li>
+													<li>Attribute: Year_of_release</li>
+													<ul><li>Type: Ordered(Quantitative)</li>
+													<li>Cardinality:50 </li></ul>
+													<li>Attribute: Movies</li>
+													<ul><li>Type: Categorical</li>
+													<li>Cardinality: 150</li></ul>
+													<li>Attribute: Genre</li>
+													<ul><li>Type: Categorical</li>
+													<li>Cardinality: 25</li></ul>
+													<li>Attribute: Directed_by</li>
+													<ul><li>Type: Categorical</li>
+													<li>Cardinality: 195</li></ul>
+													<li>Attribute: Duration</li>
+													<ul><li>Type: Ordered(Sequential)</li>
+													<li>Cardinality: 120</li></ul>
+						</ul>
+						</li>
+					</ul>
+				</li>
+				<li><b>Task:</b>
+					<ul>
+						<li><b>Domain description:</b> <ul><li>Data:11000 movies in the Popcha app.</li>
+						<li> Task: Top 150 movies and 25 most popular movies from the app.</li></ul></li> 
+					</ul>
+				</li>
+				<li><b>Idiom:</b> <p>In this visualization we see that there are nodes and lines connecting the nodes that are considered similar.
+					<ul><li>Encoding Idiom</li>
+						<ul><li>movies: circle</li>
+							<li>Circle area: popularity</li>
+							<li>Circle border (red): Top 25 </li></ul>	
+					</ul>
+					<ul><li>Interaction Idiom: On mouseover, the line reveal nodes that are similar. In terms of popcha user interaction.</li></ul>
+				</p></li>
+			</ul>
+			<p>
+				<b>Personal Thoughts</b> This visualization saves time during a movie night. Having the ability to view similar movies will provide users
+				with a reference to the kind of movie chosen. The area of the circle and the border changes based on popularity, this helps us to find
+				them with ease. This visualization can probably be enhanced further by providing meaning to the spatial arrangement of the 
+				different nodes.
+			</p>
+		</div>
+	</body>
+</html>
