@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Homework #5:Innovative Vis Design - CSE 578 - Fall 2022</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="js/main.js"></script>
+        <style>
+            .myContainer {
+                margin:auto;
+                width:1080;
+                
+            }
+            /* .donut {
+                float:left;
+                width:800px;
+                padding:10px;
+               
+            } */
+            .chart_svg {
+                width: 2048px;
+                height:600px;
+                background-color: white;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+                opacity:0.5;
+            }
+            /* .row {
+                display: flex;
+                align-items: center;
+            }*/
+
+            #intro_div{
+                opacity:0.5;
+            }
+            /*
+            select{
+                display: table-row;
+                border: none;
+                overflow: hidden;
+                outline: none;
+                table-layout: unset;
+                /* -webkit-appearance: none; 
+            } 
+            /* #ring_div {
+                width:800px;
+                height:200px;
+                position:static;
+            
+            }
+            #ring_svg {
+                width: 780px;
+                height:200px;
+                background-color: white;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+            } */
+            /* div.tooltip {
+                    position: absolute;
+                    text-align: center;
+                    width: 80px;
+                    height: 40px;
+                    padding: 2px;
+                    font: 12px sans-serif;
+                    background: rgb(255, 255, 255);
+                    border: 2px solid black;
+                    border-radius: 10px;
+                    pointer-events: none;
+            } */
+            body{
+                background-image: url('img/space-background.jpg');
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="myContainer">
+            <div id="intro_div" class="border border-dark rounded bg-light shadow-sm" >
+            <h1 class="text-center">Homework #5: Innovative Vis Design</h1>
+            <h3 class="text-center">Dhiraj Kumar Karthikeyan - dkarthik@asu.edu</h4>
+            <h4 class="text-center">Beyond Man's Best Friend </h5>
+            <h5 class="text-center">The soviet space dogs: This implementation uses multi level donut charts to depict 
+                the number of trips a dog has taken to space. The area of the arc tell us the altitude it reached in each flight. The color of the paw inserted
+                in the center tell us if the dog survived it's last flight or not, Survived: Green, Died: Orange. The color of the arc depicts the gender of the
+                dog, Blue: Male, Red: Female. The links between the two dogs show which two dogs flew together and in which rocket. The horizontal positioning
+                shows the Year in which they travelled, ranging from 1951 to 1960.
+            </h5>
+            </div>
+            <hr>   
+            <div class="donut">
+                    <svg class="chart_svg"> </svg> 
+                    <!-- <svg class="chart_svg"> </svg> -->
+            </div>
+        </div>
+        </div>
+    </body>
+</html> 
